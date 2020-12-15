@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130429672-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-130429672-1');
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cirplein</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        #mapContainer {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        
+        div.leaflet-bar {
+            text-align: center;
+        }
+    </style>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/caja.css">
+    <script src="js/index2.js"></script>
+    <script src="js/caja.js"></script>
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+
+</head>
+
+<body onload="getLocation()">
+
+
+
+    <div id="mapContainer"></div>
+    <div class="container">
+        <div class="row">
+
+
+            <!--****************************************************-->
+
+
+
+
+
+
+            <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+
+            <!--
+            <script>
+                //*********************************************
+
+
+
+
+
+                //**********************************************
+
+
+
+
+
+                var redicon = L.icon({
+                    iconUrl: 'img/covidx.png ',
+
+
+                    iconSize: [58, 70], // size of the icon
+                    shadowSize: [50, 64], // size of the shadow
+                    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+                    shadowAnchor: [4, 62], // the same for the shadow
+                    popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+                });
+
+
+                var sospechon = L.icon({
+                    iconUrl: 'img/sospechosox.png ',
+
+
+                    iconSize: [68, 80], // size of the icon
+                    shadowSize: [50, 64], // size of the shadow
+                    iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+                    shadowAnchor: [4, 62], // the same for the shadow
+                    popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+                });
+
+
+
+
+                var marcas = L.marker([3.5169756, -76.3050126], {
+                        icon: redicon
+                    }).addTo(map)
+                    .bindPopup('<img src="img/merkel.jpg" width="100"/>Infectado, Nombre edad, Genero <a href="graficasjorgearmandosantos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas </a>'),
+
+
+
+                    marcas2 = L.marker([3.5056186, -76.3032138], {
+                        icon: sospechon
+                    }).addTo(map)
+                    .bindPopup('<img src="img/obama.png" width="100"/>Sospechoso, Nombre, Edad, Genero <a href="graficasjorgearmandosantos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas </a>');
+
+                marcas4 = L.marker([3.5430303, -76.2907335], {
+                        icon: sospechon
+                    }).addTo(map)
+                    .bindPopup('<img src="img/trump.png" width="100"/>Sospechoso, Nombre Edad, Genero,  <a href="graficasjorgearmandosantos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas </a>');
+
+                //   marcas5 = L.marker([3.5277403,-76.3128736], {
+                //          icon: redicon
+                //    }).addTo(map)
+                //     .bindPopup('<img src="2.jpg" width="100"/>LEONARDO POSADA ANDRADE, Dirección: CALLE 44 #6EA-18 , Barrio: GUAYABAL, Comuna: 5 Teléfono: 3134250422, Correo: leonardo.posada@christus.co <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas </a>');
+
+                marcas6 = L.marker([3.5199186, -76.3132138], {
+                        icon: redicon
+                    }).addTo(map)
+                    .bindPopup('<img src="img/covidx.png " width="100"/>Infectado, Nombre, Edad, Genero, <a href="graficasjorgearmandosantos.html" target=\"_blank\" title=\"Opens in a new window\">Ver Estadísticas </a>');
+
+                marcas7 = L.marker([3.52212, -76.288904], {
+                        icon: redicon
+                    }).addTo(map)
+                    .bindPopup('<img src="img/randpaul.png" width="100"/>Infectado, Nombre Edad Genero<a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas </a>');
+
+                //  marcas8 = L.marker([3.50212, -76.3026989], {
+                //   icon: redicon
+                //   }).addTo(map)
+                //   .bindPopup('<img src="img/randpaul.png width="100"/>nfectado, Nombre, Edad, Genero <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas </a>');
+
+
+                marcas9 = L.marker([3.51111, -76.3126989], {
+                        icon: sospechon
+                    }).addTo(map)
+                    .bindPopup('<img src="img/trump.png" width="100"/>Sospechoso, Nombre, Edad, Genero <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas </a>');
+
+
+                marcas10 = L.marker([3.51111, -76.3216989], {
+                        icon: redicon
+                    }).addTo(map)
+                    .bindPopup('<img src="img/randpaul.png" width="100"/>Infectado, Nombre, Edad, Genero <a href=\"graficos.html" target=\"_blank\" title=\"Opens in a new window\">Estadísticas </a>');
+
+
+
+                ;
+            </script>
+
+
+            Botones
+            <script>
+                function ocultar() {
+                    document.getElementById("s1").style.display = "none";
+                }
+
+                function mostrar() {
+                    document.getElementById("s1").style.display = "block";
+                }
+            </script>
+
+
+            <script src="js/timer.js"></script>
+            <script>
+                (function() {
+                    Timer.start({
+                        'timer': document.getElementById('js-timer'),
+                        'endtime': document.getElementById('js-timer').getAttribute('data-endtime')
+                    });
+                })();
+            </script>
+
+
+
+
+
+
+-->
+
+
+            <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+
+
+
+
+
+
+            <!--*********************************************************************************-->
+
+
+
+
+</body>
+
+</html>
